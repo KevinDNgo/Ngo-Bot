@@ -4,12 +4,16 @@ This bot was originally created to address the hassle of manually deleting comma
 
 How it was made
 ---------------
-The code is being hosted live on Glitch. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
+This bot was made using Node.js. To make Node.js work with the Discord API, I used Discord.js, a powerful node.js module that allows you to interact with the Discord API very easily. Find out more [about Discord.js](https://discord.js.org/).
 
-Find out more [about Glitch](https://glitch.com/about).
+The code is being hosted live on Glitch. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you. Find out more [about Glitch](https://glitch.com/about).
 
-The main code is in `server.js`
-Frameworks and packages are in `package.json`
+Current functionalities
+-----------------------
+In the main server channel, this bot automatically removes any messages after 60 seconds that satisfy either of these criteria:
+- Any message from a bot
+- Any message that starts with ';;' (the default FredBoat command syntax)
+
 
 Future plans
 ------------

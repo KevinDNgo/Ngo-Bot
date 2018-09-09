@@ -4,7 +4,7 @@ This bot was originally created to address the hassle of manually deleting comma
 
 How it was made
 ---------------
-This bot was made using Node.js. To make Node.js work with the Discord API, I used Discord.js, a powerful node.js module that allows you to interact with the Discord API very easily. Find out more [about Discord.js](https://discord.js.org/).
+This bot was made using Node.js. To make Node.js work with the Discord API, I used Discord.js, a powerful Node.js module that allows you to interact with the Discord API very easily. Find out more [about Discord.js](https://discord.js.org/).
 
 The code is being hosted live on Glitch. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you. Find out more [about Glitch](https://glitch.com/about).
 

@@ -50,7 +50,7 @@ client.on('message', message => {
                 .catch(console.error);
             }
             // Increased deletion delay of play select command for readability
-            else if(message.content.indexOf('Please select a track with the') !== -1) {
+            else if(message.content.indexOf('Searching YouTube for') !== -1) {
                 message.delete(15000)
                 .catch(console.error);
             }
@@ -85,7 +85,7 @@ client.on('message', message => {
                 .catch(console.error);
             }
             // Increased deletion delay of play select command for readability
-            else if(message.content.indexOf('Please select a track with the') !== -1) {
+            else if(message.content.indexOf('Searching YouTube for') !== -1) {
                 message.delete(15000)
                 .catch(console.error);
             }
@@ -103,6 +103,37 @@ client.on('message', message => {
             .catch(console.error);
         }
         if(message.content.startsWith('!')) {
+            message.delete(5000)
+            .catch(console.error);
+        }
+    }
+    if(message.channel.id === '466853620336295937') {
+        if(message.author.id === '184405311681986560') {
+            // Increased deletion delay of queue command for readability
+            if(message.content.indexOf('with a remaining length of') !== -1) {
+                message.delete(20000)
+                .catch(console.error);
+            }
+            // Increased deletion delay of history command for readability
+            else if(message.content.indexOf('Showing tracks in history.') !== -1) {
+                message.delete(20000)
+                .catch(console.error);
+            }
+            // Increased deletion delay of play select command for readability
+            else if(message.content.indexOf('Searching YouTube for') !== -1) {
+                message.delete(15000)
+                .catch(console.error);
+            }
+            else {
+                message.delete(10000)
+                .catch(console.error);
+            }
+        }
+        if(message.author.id === '204777316621090816') {
+            message.delete(10000)
+            .catch(console.error);
+        }
+        if(message.content.startsWith(';;')) {
             message.delete(5000)
             .catch(console.error);
         }

@@ -37,7 +37,7 @@ client.on('ready', () => {
 
  // Checks if message is music bot command or response, and deletes it
 client.on('message', message => {
-         
+    // bigmoist
     if(message.channel.id === '133104742254510080') {
         if(message.author.id === '184405311681986560') {
             // Increased deletion delay of queue command for readability
@@ -73,6 +73,7 @@ client.on('message', message => {
             .catch(console.error);
         }
     }
+    // bigmoistedu
     if(message.channel.id === '486597105792843777') {
         if(message.author.id === '184405311681986560') {
             // Increased deletion delay of queue command for readability
@@ -108,6 +109,7 @@ client.on('message', message => {
             .catch(console.error);
         }
     }
+    // Manreet's server
     if(message.channel.id === '466853620336295937') {
         if(message.author.id === '184405311681986560') {
             // Increased deletion delay of queue command for readability
@@ -139,37 +141,46 @@ client.on('message', message => {
             .catch(console.error);
         }
     }
-    if(message.channel.id === '466853620336295937') {
-        if(message.content === '>>purge' && message.author.id === '133163729507319809') {
+    // devtest
+    if(message.channel.id === '133104742254510080') {
+        if(message.content === '>>purge' && message.author.roles.has('133106336421511168')) {
+            message.delete();
             message.channel.fetchMessages().then(messages => {
-                const botMessages = messages.filter(msg => msg.author.bot);
-                message.channel.bulkDelete(botMessages);
-                const commandMessages = messages.filter(msg => msg.content.startsWith(';;'));       
+                const commandMessages = messages.filter(msg => msg.author.bot || msg.content.startsWith(';;') || msg.content.startsWith('>>'));
                 message.channel.bulkDelete(commandMessages);
-                var messagesDeleted = botMessages.array().length;
-              
-                /* message.channel.send('Deletion of messages successful. Total messages deleted: '
-                                     + messagesDeleted); */
-                console.log('Deletion of messages successful. Total messages deleted: ' + messagesDeleted)
-            }).catch(err => {
+                          }).catch(err => {
                 console.log('Error while doing Bulk Delete.');
                 console.log(err);
             });
+                /* message.channel.send('Deletion of messages successful. Total messages deleted: '
+                                     + messagesDeleted); 
+                console.log('Deletion of messages successful. Total messages deleted: ' + messagesDeleted) */
         }
     }
+    // devtest
     if(message.channel.id === '567923203880779787') {
-        if(message.content === '>>purge' && message.author.id === '133163729507319809') {
+        if(message.content === '>>purge' && message.member.hasPermission('MANAGE_MESSAGES')) {
+            message.delete();
             message.channel.fetchMessages().then(messages => {
-                const botMessages = messages.filter(msg => msg.author.bot);
-                message.channel.bulkDelete(botMessages);
-                const commandMessages = messages.filter(msg => msg.content.startsWith(';;'));   
+                const commandMessages = messages.filter(msg => msg.author.bot || msg.content.startsWith(';;') || msg.content.startsWith('>>'));
                 message.channel.bulkDelete(commandMessages);
-                var messagesDeleted = botMessages.array().length + commandMessages.array().length;
-              
+                          }).catch(err => {
+                console.log('Error while doing Bulk Delete.');
+                console.log(err);
+            });
                 /* message.channel.send('Deletion of messages successful. Total messages deleted: '
-                                     + messagesDeleted); */
-                console.log('Deletion of messages successful. Total messages deleted: ' + messagesDeleted)
-            }).catch(err => {
+                                     + messagesDeleted); 
+                console.log('Deletion of messages successful. Total messages deleted: ' + messagesDeleted) */
+        }
+    }
+    // Manreet's server
+    if(message.channel.id === '466853620336295937') {
+        if(message.content === '>>purge' && (message.member.hasPermission('MANAGE_MESSAGES') || message.author.id === ('133163729507319809'))) {
+            message.delete();
+            message.channel.fetchMessages().then(messages => {
+                const commandMessages = messages.filter(msg => msg.author.bot || msg.content.startsWith(';;') || msg.content.startsWith('>>'));
+                message.channel.bulkDelete(commandMessages);
+                          }).catch(err => {
                 console.log('Error while doing Bulk Delete.');
                 console.log(err);
             });

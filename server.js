@@ -37,6 +37,7 @@ client.on('ready', () => {
 
  // Checks if message is music bot command or response, and deletes it
 client.on('message', message => {
+         
     if(message.channel.id === '133104742254510080') {
         if(message.author.id === '184405311681986560') {
             // Increased deletion delay of queue command for readability
@@ -136,6 +137,42 @@ client.on('message', message => {
         if(message.content.startsWith(';;')) {
             message.delete(5000)
             .catch(console.error);
+        }
+    }
+    if(message.channel.id === '466853620336295937') {
+        if(message.content === '>>purge' && message.author.id === '133163729507319809') {
+            message.channel.fetchMessages().then(messages => {
+                const botMessages = messages.filter(msg => msg.author.bot);
+                message.channel.bulkDelete(botMessages);
+                const commandMessages = messages.filter(msg => msg.content.startsWith(';;'));       
+                message.channel.bulkDelete(commandMessages);
+                var messagesDeleted = botMessages.array().length;
+              
+                /* message.channel.send('Deletion of messages successful. Total messages deleted: '
+                                     + messagesDeleted); */
+                console.log('Deletion of messages successful. Total messages deleted: ' + messagesDeleted)
+            }).catch(err => {
+                console.log('Error while doing Bulk Delete.');
+                console.log(err);
+            });
+        }
+    }
+    if(message.channel.id === '567923203880779787') {
+        if(message.content === '>>purge' && message.author.id === '133163729507319809') {
+            message.channel.fetchMessages().then(messages => {
+                const botMessages = messages.filter(msg => msg.author.bot);
+                message.channel.bulkDelete(botMessages);
+                const commandMessages = messages.filter(msg => msg.content.startsWith(';;'));   
+                message.channel.bulkDelete(commandMessages);
+                var messagesDeleted = botMessages.array().length + commandMessages.array().length;
+              
+                /* message.channel.send('Deletion of messages successful. Total messages deleted: '
+                                     + messagesDeleted); */
+                console.log('Deletion of messages successful. Total messages deleted: ' + messagesDeleted)
+            }).catch(err => {
+                console.log('Error while doing Bulk Delete.');
+                console.log(err);
+            });
         }
     }
 });

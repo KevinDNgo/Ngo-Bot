@@ -1,0 +1,4 @@
+{
+    "discord_token": "process.env.TOKEN",
+    "wit_ai_token": "process.env.WITAITOKEN"
+}

@@ -388,6 +388,13 @@ async function transcribe_witai(file) {
     */      
     // bigmoist
     if(message.guild.id === '133104742254510080') {
+        // Karl Spongebob Mock Meme
+        if(message.author.id === '193942980225138688') {
+            if(Math.floor( Math.random() * 69 ) == 0) {
+                message.channel.send(message.content.split('').map((v,i)=>i%2!==0?v.toLowerCase():v.toUpperCase()).join(''))
+                .catch(console.error);   
+            }
+        }
         // TikTok Repost
         if(message.content.indexOf('tiktok.com') !== -1 && message.channel.id !== '902230023786864691') {
             message.delete({ timeout: 0 })
@@ -547,6 +554,7 @@ async function transcribe_witai(file) {
             message.channel.send('Shut up Nick, you stupid bitch. My nut is more voluminous and bountiful than yours')
             .catch(console.error);                    
       }*/
+
     }
     // bigmoist
     if(message.guild.id === '133104742254510080') {
@@ -643,7 +651,7 @@ client.on('messageDelete', message => {
         if(message.cleanContent.startsWith('>')) return;
         //if(message.cleanContent.indexOf('tiktok.com')) return;
         if (message.channel.type === 'text') {
-            var logger = message.guild.channels.cache.find(
+            var logger = message.channels.cache.find(
             channel => channel.id === '567923203880779787'
             );
             if (logger) {
@@ -661,18 +669,15 @@ client.on('messageDelete', message => {
     }
 })
 
-/*
 // KDS Message Delete
 client.on('messageDelete', message => {
     const CHANNEL = 'log';
-    if (message.guild.id === '829633185683079209') return;
-    if (message.channel.id === '567923203880779787') {
-        if(!message.author.bot) return;
+    if (message.guild.id === '133104742254510080') {
         //if(message.author.id === client.user.id) return;
         if(message.cleanContent.startsWith('-')) return;
         if (message.channel.type === 'text') {
-            var logger = client.channels.cache.find(
-                channel => channel.id === '829633186333458464'
+            var logger = client.guilds.channels.cache.find(
+                channel => channel.id === '988328193918378064'
             );
             if (logger) {
                 const embed = new Discord.MessageEmbed()
@@ -688,7 +693,7 @@ client.on('messageDelete', message => {
         }
     }
 })
-*/
+
 /*
 client.on('message', message => {
     const CHANNEL = 'log';

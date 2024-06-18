@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@discordjs/opus": "^0.3.2",
-    "discord.js": "^12.2.0",
+    "discord.js": "^13.14.0",
     "express": "^4.17.1",
     "node": "^15.3.0",
     "node-witai-speech": "^1.0.2",
